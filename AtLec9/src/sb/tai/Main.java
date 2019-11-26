@@ -20,11 +20,11 @@ public class Main {
             int a = generateInt();
             int b = generateInt();
             if (a<3&&b<3) {
-                //System.out.println(a);
+                //System.out.println(a); Проверял до какого момента идёт норм выполнение
                 User person = new User(surname[a],name[b]);
                 //System.out.println(person);
                 if (all.contains(person)) {
-                    System.out.println(a);
+                    //System.out.println(a); Это ветвление не выполняется, похоже что-то не так или с equals или с contains
                     tmp = false;
                     print1(all);
                 } else {
