@@ -1,15 +1,16 @@
 package sb.tai;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
-       /* ArrayList<Integer> arrList = new ArrayList<>(10000);
+        /*ArrayList<Integer> arrList = new ArrayList<>(10000);
         LinkedList<Integer> linList = new LinkedList<>();
         for (int i = 0; i < 9999 ; i++) {
             arrList.add(generateInt());
-            //LinkedList<Integer> linList = new LinkedList<>(10000);
+            linList.add() = new LinkedList<>(10000);
         }*/
         //print1(list);
         String [] surname = {"Микальчук","Говоркян","Лавринович"};
