@@ -25,6 +25,7 @@ public class Main {
         System.out.println("Третья задача. Исходная коллекция = " + arrWithDoubleColl);
         System.out.println("Длинна исходной коллекции = " + arrWithDoubleColl.size());
         removeDouble(arrWithDoubleColl);
+        System.out.println(removeDouble1(arrWithDoubleColl));
         //arrWithDoubleColl.remove(arrWithDoubleColl.indexOf(arrWithDoubleColl.contains())) - пробовал в одну строку :)
     }
 
@@ -38,6 +39,9 @@ public class Main {
         }
         System.out.println("Результирующая коллекция = " + arr);
         System.out.println("Длинна результирующей коллекции = " + arr.size());
+    }
+    public static Collection<Integer> removeDouble1(ArrayList<Integer> arr) {
+        return new HashSet(arr);
     }
 }
 

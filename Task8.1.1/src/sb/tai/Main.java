@@ -18,38 +18,41 @@ public class Main {
                 "C100_1-300",
                 "C200_1-100-750",
                 "C300_1-32-15"};
-        Car[] cars = new Car[inData.length];
-        int i = 0;
-        int copyPos = -1;// позиция повторяющегося элемента
-        for (String x : inData) {
-            String[] dist = x.split("_");
-            String[] dist1 = dist[1].split("-");
-            if (i > 0) {
-                copyPos = CarsUtils.copyFinder(cars, dist[0], dist1[0]);
+
+            Car[] cars = new Car[inData.length];
+            int i = 0;
+            int copyPos = -1;// позиция повторяющегося элемента
+            for (String x : inData) {
+                String[] dist = x.split("_");
+                String[] dist1 = dist[1].split("-");
+                if (i > 0) {
+                    copyPos = CarsUtils.copyFinder(cars, dist[0], dist1[0]);
+                }
+                if (copyPos > -1) {
+                    cars[copyPos].addProbeg(Integer.valueOf(dist1[1]));
+                    copyPos = -1;
+                    continue;
+                }
+                if (dist[0].equals("C100")) {
+                    cars[i] = new Car(dist[0], dist1[0], Integer.valueOf(dist1[1]), 46.10, 12.5);
+                    i++;
+                    //System.out.println(dist[0]);
+                } else if (dist[0].equals("C200")) {
+                    cars[i] = new Car(dist[0], dist1[0], Integer.valueOf(dist1[1]), Integer.valueOf(dist1[dist1.length - 1]),
+                            48.90, 12d);
+                    i++;
+                } else if (dist[0].equals("C300")) {
+                    cars[i] = new Car(dist[0], dist1[0], Integer.valueOf(dist1[1]), Integer.valueOf(dist1[dist1.length - 1]),
+                            47.50, 11.5);
+                    i++;
+                } else if (dist[0].equals("C400")) {
+                    cars[i] = new Car(dist[0], dist1[0], Integer.valueOf(dist1[1]), Integer.valueOf(dist1[dist1.length - 1]),
+                            48.90, 20d);
+                    i++;
+                }
             }
-            if (copyPos > -1) {
-                cars[copyPos].addProbeg(Integer.valueOf(dist1[1]));
-                copyPos = -1;
-                continue;
-            }
-            if (dist[0].equals("C100")) {
-                cars[i] = new Car(dist[0], dist1[0], Integer.valueOf(dist1[1]), 46.10, 12.5);
-                i++;
-                //System.out.println(dist[0]);
-            } else if (dist[0].equals("C200")) {
-                cars[i] = new Car(dist[0], dist1[0], Integer.valueOf(dist1[1]), Integer.valueOf(dist1[dist1.length - 1]),
-                        48.90, 12d);
-                i++;
-            } else if (dist[0].equals("C300")) {
-                cars[i] = new Car(dist[0], dist1[0], Integer.valueOf(dist1[1]), Integer.valueOf(dist1[dist1.length - 1]),
-                        47.50, 11.5);
-                i++;
-            } else if (dist[0].equals("C400")) {
-                cars[i] = new Car(dist[0], dist1[0], Integer.valueOf(dist1[1]), Integer.valueOf(dist1[dist1.length - 1]),
-                        48.90, 20d);
-                i++;
-            }
-        }
+
+
 
 
         //cars[0].typeDist();
